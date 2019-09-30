@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get ready for Brexit: Your results
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Brexit",
+      href: "https://www.gov.uk/get-ready-brexit-check"
+    },
+    {
+      text: "Get ready for Brexit: Your results"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Get ready for Brexit: <span class="govuk-break-line">Your results</span></h1>
+
+  </div>
+
+</div>
+
+
+<div class="govuk-mailinglist">
+  <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">What you need to do may change</h2>
+  <a class="govuk-mailinglist__link" href="https://www.gov.uk/get-ready-brexit-check/email-signup?c%5B%5D=do-not-employ-eu-citizens&c%5B%5D=owns-operates-business-organisation">
+    <span class="govuk-mailinglist__link-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 25" width="18" height="25"><path d="M7.05,21.01C7.05,22.11,7.92,23,9,23c1.08,0,1.95-0.89,1.95-1.99H7.05z M15.73,16.82V11c0-3.25-2.2-5.97-5.18-6.69V3.59C10.56,2.71,9.86,2,9,2C8.14,2,7.44,2.71,7.44,3.59v0.72C4.47,5.03,2.27,7.75,2.27,11v5.82l-2.08,2.12V20h17.62v-1.06L15.73,16.82z"/></svg></span>
+    <span class="govuk-mailinglist__link-text">Subscribe to updates about changes that may affect you and get a link to your results</span>
+  </a>
+</div>
+
+
+<h3 class="govuk-heading-l">What you need to do</h3>
+
+
+<hr class="govuk-section-break  govuk-section-break--l  govuk-section-break--thick  govuk-section-break--brand  govuk-section-break--visible">
+
+
+<!-- Living in the UK -->
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+    <h4 class="govuk-heading-m">Living in the UK</h4>
+    <p class="govuk-body-s">Because you said:</p>
+    <ul class="govuk-list  govuk-list--bullet  govuk-body-s">
+      <li>You are an EU national</li>
+      <li>You live in the UK</li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div>
+      <h4 class="govuk-heading-s"><a href="https://www.gov.uk/settled-status-eu-citizens-families/applying-for-settled-status">Apply to the EU Settlement Scheme by 31 December 2020 to continue living in the UK</a></h4>
+      <p>If you do not apply to the Settlement Scheme, you may not be able to continue living or working in the UK as you do now.</p>
+      <p class="govuk-body-s"><span class="govuk-break-line">Read the guidance:</span> <a href="https://www.gov.uk/settled-status-eu-citizens-families">Apply to the EU Settlement Scheme (settled and pre-settled status)</a></p>
+    </div>
+
+    <hr class="govuk-section-break  govuk-section-break--l  govuk-section-break--visible">
+
+    <div>
+      <h4 class="govuk-heading-s">Order your prescriptions as normal</h4>
+      <p>You do not need to change how you order or take your medicines.</p>
+      <p class="govuk-body-s"><span class="govuk-break-line">Read NHS guidance:</span> <a href="http://nhs.uk/brexit-medicine" target="_blank">Getting your medicines if there’s a no-deal Brexit</a></p>
+    </div>
+
+    <hr class="govuk-section-break  govuk-section-break--l  govuk-section-break--visible">
+
+    <div>
+      <h4 class="govuk-heading-s">EU citizens do not need to prove settled status to work or rent</h4>
+      <p>Right to work and right to rent checks remain unchanged until at least 30 December 2020.</p>
+      <span class="govuk-body-s govuk-break-line">Read NHS guidance:</span> 
+      <ul class="govuk-body-s govuk-list">
+        <li><a href="https://www.gov.uk/guidance/right-to-rent-checks-for-eu-eea-and-swiss-citizens-after-brexit">Right to rent checks for EU nationals after Brexit </a></li>
+        <li><a href="https://www.gov.uk/guidance/employing-eu-eea-and-swiss-citizens-and-their-family-members-after-brexit">Employing EU nationals after Brexit</a></li>
+      </ul>
+    </div>
+    
+  </div>
+
+</div>
+
+
+<hr class="govuk-section-break  govuk-section-break--l  govuk-section-break--visible">
+
+
+<!-- Visiting the  UK -->
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+    <h4 class="govuk-heading-m">Visiting the UK</h4>
+    <p class="govuk-body-s">Because you said:</p>
+    <ul class="govuk-list  govuk-list--bullet  govuk-body-s">
+      <li>You are an EU national</li>
+      <li>You plan to travel to the UK</li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div>
+      <h4 class="govuk-heading-s">Take out appropriate travel insurance with health cover before travelling to the UK</h4>
+      <p>You will be charged for your care if you do not have the right insurance.</p>
+      <p class="govuk-body-s"><span class="govuk-break-line">Read the guidance:</span> <a href="https://www.gov.uk/guidance/healthcare-for-eu-and-efta-citizens-visiting-the-uk">Healthcare after Brexit: citizens of the EU, Norway, Iceland, Liechtenstein and Switzerland visiting the UK</a></p>
+    </div>
+    
+  </div>
+
+</div>
+
+
+<hr class="govuk-section-break  govuk-section-break--l  govuk-section-break--visible">
+
+
+<!-- Studying in the UK -->
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+    <h4 class="govuk-heading-m">Studying in the UK</h4>
+    <p class="govuk-body-s">Because you said:</p>
+    <ul class="govuk-list  govuk-list--bullet  govuk-body-s">
+      <li>You are an EU national</li>
+      <li>You are studying in the UK</li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div>
+      <h4 class="govuk-heading-s">Contact your home university to check if you can continue studying on your Erasmus+ placement in the UK</h4>
+      <p>If you have not already started your placement you may not be able to study in the UK. If you have started, you may not get NHS healthcare, student finance or benefits.</p>
+    </div>
+    
+  </div>
+
+</div>
+
+
+<hr class="govuk-section-break  govuk-section-break--l  govuk-section-break--visible">
+
+
+<p><a class="govuk-button" href="https://www.gov.uk/get-ready-brexit-check">Start again</a></p>
+
+
+<hr class="govuk-section-break  govuk-section-break--l  govuk-section-break--thick  govuk-section-break--brand  govuk-section-break--visible">
+
+{% endblock %}
