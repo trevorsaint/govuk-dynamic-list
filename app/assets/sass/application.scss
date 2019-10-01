@@ -16,8 +16,8 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
-
+@import "components/mailinglist";
+@import "components/social-list";
 
 
 // Prototype Brexit styles
@@ -34,22 +34,4 @@ $govuk-assets-path: '/govuk/assets/';
 
 .govuk-section-break--brand {
     border-bottom-color: $govuk-brand-colour;
-}
-
-
-
-// Mailinglist
-.govuk-mailinglist {
-    @include govuk-responsive-margin(8, "bottom");
-    background-color: govuk-colour("light-grey");
-    padding: govuk-spacing(4);
-}
-
-.govuk-mailinglist__link {
-    @include govuk-font(19);
-    display: inline-flex;
-}
-
-.govuk-mailinglist__link-icon {
-    margin-right: govuk-spacing(2);
 }
