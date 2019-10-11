@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Do you exchange personal data with another organisation in Europe? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/do-you-employ-anyone-from-another-european-country"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/get-ready-for-brexit/do-you-get-eu-or-uk-government-funding">
+
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">Do you exchange personal data with another organisation in Europe?</h1>
+        </legend>
+
+        <p>This includes <a href="/eu-eea">organisations located in the EU</a> and Norway, Iceland and Liechtenstein.</p>
+        <p>Personal data includes customers’ addresses, staff working hours or information you give to a delivery company.</p>
+
+        {% set yesPersonalDataExchange %}
+          {{ govukCheckboxes({
+            idPrefix: "personal-data-exchange",
+            name: "personal-data-exchange",
+            hint: {
+              text: "Select all that apply."
+            },
+            items: [
+              {
+                value: "Processing personal data from Europe",
+                text: "Processing personal data from Europe",
+                checked: checked('personal-data-exchange', 'Processing personal data from Europe') == 'checked'
+              },
+              {
+                value: "Using websites or services hosted in Europe",
+                text: "Using websites or services hosted in Europe",
+                checked: checked('personal-data-exchange', 'Using websites or services hosted in Europe') == 'checked'
+              },
+              {
+                value: "Providing digital services available to Europe",
+                text: "Providing digital services available to Europe",
+                checked: checked('personal-data-exchange', 'Providing digital services available to Europe') == 'checked'
+              }
+            ]
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "do-you-exchange-personal-data-with-another-organisation-in-europe",
+          name: "do-you-exchange-personal-data-with-another-organisation-in-europe",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: yesPersonalDataExchange
+              },
+              checked: checked('do-you-exchange-personal-data-with-another-organisation-in-europe', 'Yes') == 'checked'
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked('do-you-exchange-personal-data-with-another-organisation-in-europe', 'No') == 'checked'
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Next"
+        }) }}
+
+      </fieldset>
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

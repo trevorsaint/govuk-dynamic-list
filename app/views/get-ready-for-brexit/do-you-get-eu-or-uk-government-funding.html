@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Do you get EU or UK government funding? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/do-you-exchange-personal-data-with-another-organisation-in-europe"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/get-ready-for-brexit/do-you-sell-your-products-or-services-to-the-public-sector">
+
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">Do you get EU or UK government funding?</h1>
+        </legend>
+
+        <p>EU funding includes the Creative Europe Fund or Horizon 2020 scheme.</p>
+
+        {% set yesGovernmentFunding %}
+          {{ govukCheckboxes({
+            idPrefix: "government-funding",
+            name: "government-funding",
+            hint: {
+              text: "Select all that apply."
+            },
+            items: [
+              {
+                value: "EU funding",
+                text: "EU funding",
+                checked: checked('government-funding', 'EU funding') == 'checked'
+              },
+              {
+                value: "UK government funding",
+                text: "UK government funding",
+                checked: checked('government-funding', 'UK government funding') == 'checked'
+              }
+            ]
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "do-you-get-eu-or-uk-government-funding",
+          name: "do-you-get-eu-or-uk-government-funding",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: yesGovernmentFunding
+              },
+              checked: checked('do-you-get-eu-or-uk-government-funding', 'Yes') == 'checked'
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked('do-you-get-eu-or-uk-government-funding', 'No') == 'checked'
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Next"
+        }) }}
+
+      </fieldset>
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

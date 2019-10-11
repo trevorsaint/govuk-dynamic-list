@@ -23,16 +23,30 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Prototype Brexit styles
 .govuk-break-line {
-    display: block;
-    margin-bottom: govuk-spacing(1);
+  display: block;
+  margin-bottom: govuk-spacing(1);
 }
 
 
 .govuk-section-break--thick {
-    border-bottom-width: 3px;
+  border-bottom-width: 3px;
 }
 
 
 .govuk-section-break--brand {
-    border-bottom-color: $govuk-brand-colour;
+  border-bottom-color: $govuk-brand-colour;
+}
+
+
+.govuk-section__header {
+  border-top: 3px solid $govuk-brand-colour;
+  padding-bottom: govuk-spacing(4);
+  padding-top: govuk-spacing(4);
+}
+
+
+.govuk-section__content {
+  border-top: 1px solid $govuk-border-colour;
+  padding-bottom: govuk-spacing(6);
+  padding-top: govuk-spacing(6);
 }

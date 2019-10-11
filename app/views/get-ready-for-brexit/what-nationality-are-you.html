@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  What nationality are you? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/get-ready-for-brexit/where-do-you-live">
+
+      {{ govukRadios({
+        idPrefix: "what-nationality-are-you",
+        name: "what-nationality-are-you",
+        fieldset: {
+          legend: {
+          text: "What nationality are you?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "British",
+            text: "British",
+            checked: checked('what-nationality-are-you', 'British') == 'checked'
+          },
+          {
+            value: "Irish",
+            text: "Irish",
+            checked: checked('what-nationality-are-you', 'Irish') == 'checked'
+          },
+          {
+            value: "Another EU country",
+            text: "Another EU country, Iceland, Liechtenstein, Norway or Switzerland",
+            checked: checked('what-nationality-are-you', 'Another EU country') == 'checked'
+          },
+          {
+            value: "Somewhere else",
+            text: "Somewhere else",
+            checked: checked('what-nationality-are-you', 'Somewhere else') == 'checked'
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Next"
+      }) }}
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

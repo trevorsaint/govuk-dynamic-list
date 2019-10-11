@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Where do you plan to travel for other purposes, like tourism? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/do-you-travel-to-the-eu-for-business"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="/get-ready-for-brexit/do-you-plan-to-do-either-of-the-following-when-travelling">
+
+      <fieldset class="govuk-fieldset" aria-describedby="where-do-you-plan-to-travel-hint">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">Where do you plan to travel for other purposes, like tourism?</h1>
+        </legend>
+
+        <p>If you’ll be abroad overnight on 31 October, select where you plan to be.</p>
+
+        <span class="govuk-hint" id="where-do-you-plan-to-travel-hint">Select all that apply. If you do not plan to travel, select next.</span>
+
+        {{ govukCheckboxes({
+          idPrefix: "where-do-you-plan-to-travel",
+          name: "where-do-you-plan-to-travel",
+          items: [
+            {
+              value: "To the UK",
+              text: "To the UK",
+              checked: checked('where-do-you-plan-to-travel', 'To the UK') == 'checked'
+            },
+            {
+              value: "To Ireland",
+              text: "To Ireland",
+              checked: checked('where-do-you-plan-to-travel', 'To Ireland') == 'checked'
+            },
+            {
+              value: "To another EU country",
+              text: "To another EU country, Iceland, Liechtenstein, Norway or Switzerland",
+              checked: checked('where-do-you-plan-to-travel', 'To another EU country') == 'checked'
+            },
+            {
+              value: "To the rest of the world",
+              text: "To the rest of the world",
+              checked: checked('where-do-you-plan-to-travel', 'To the rest of the world') == 'checked'
+            }
+          ]
+        }) }}
+
+      </fieldset>
+
+      {{ govukButton({
+        text: "Next"
+      }) }}
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}
