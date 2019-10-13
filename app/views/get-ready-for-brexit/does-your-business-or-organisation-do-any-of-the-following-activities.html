@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Does your business or organisation do any of the following activities? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/do-you-use-or-rely-on-intellectual-property-protection"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">Does your business or organisation do any of the following activities?</h1>
+        </legend>
+
+        <p>Importing and exporting includes temporarily taking goods across the EU border, for example to a trade fair.</p>
+
+        {{ govukCheckboxes({
+          idPrefix: "business-activities",
+          name: "business-activities",
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Sell goods or provide services in the UK",
+              text: "Sell goods or provide services in the UK",
+              checked: checked("business-activities", "Sell goods or provide services in the UK") == "checked"
+            },
+            {
+              value: "Import from the EU",
+              text: "Import from the EU",
+              checked: checked("business-activities", "Import from the EU") == "checked"
+            },
+            {
+              value: "Export to the EU",
+              text: "Export to the EU",
+              checked: checked("business-activities", "Export to the EU") == "checked"
+            },
+            {
+              value: "Provide services or do business in the EU",
+              text: "Provide services or do business in the EU",
+              checked: checked("business-activities", "Provide services or do business in the EU") == "checked"
+            },
+            {
+              value: "Transporting goods across EU borders",
+              text: "Transporting goods across EU borders",
+              checked: checked("business-activities", "Transporting goods across EU borders") == "checked"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Next"
+        }) }}
+
+      </fieldset>
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Do you use or rely on intellectual property (IP) protection? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/do-you-sell-your-products-or-services-to-the-public-sector"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">Do you use or rely on intellectual property (IP) protection?</h1>
+        </legend>
+
+        <p>Intellectual property protection includes copyright, trade marks and patents.</p>
+
+        {% set yesIntellectualProperty %}
+          {{ govukCheckboxes({
+            idPrefix: "intellectual-property-protection",
+            name: "intellectual-property-protection",
+            hint: {
+              text: "Select all that apply."
+            },
+            items: [
+              {
+                value: "Copyright",
+                text: "Copyright",
+                checked: checked("intellectual-property-protection", "Copyright") == "checked"
+              },
+              {
+                value: "Trade marks",
+                text: "Trade marks",
+                checked: checked("intellectual-property-protection", "Trade marks") == "checked"
+              },
+              {
+                value: "Designs",
+                text: "Designs",
+                checked: checked("intellectual-property-protection", "Designs") == "checked"
+              },
+              {
+                value: "Patents",
+                text: "Patents",
+                checked: checked("intellectual-property-protection", "Patents") == "checked"
+              },
+              {
+                value: "Exhaustion of rights",
+                text: "Exhaustion of rights",
+                checked: checked("intellectual-property-protection", "Exhaustion of rights") == "checked"
+              }
+            ]
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "do-you-use-or-rely-on-intellectual-property-protection",
+          name: "do-you-use-or-rely-on-intellectual-property-protection",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: yesIntellectualProperty
+              },
+              checked: checked("do-you-use-or-rely-on-intellectual-property-protection", "Yes") == "checked"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("do-you-use-or-rely-on-intellectual-property-protection", "No") == "checked"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Next"
+        }) }}
+
+      </fieldset>
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

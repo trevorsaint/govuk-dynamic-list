@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Do you own or help to run a business or organisation? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/do-you-plan-to-do-either-of-the-following-when-travelling"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">Do you own or help to run a business or organisation?</h1>
+        </legend>
+
+        <p>This includes sole traders (self-employed), limited companies, and small and medium enterprises.</p>
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "do-you-own-or-help-to-run-a-business-or-organisation",
+          name: "do-you-own-or-help-to-run-a-business-or-organisation",
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("do-you-own-or-help-to-run-a-business-or-organisation", "Yes") == "checked"
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("do-you-own-or-help-to-run-a-business-or-organisation", "No") == "checked"
+            }
+          ]
+        }) }}
+
+      </fieldset>
+
+      {{ govukButton({
+        text: "Next"
+      }) }}
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,578 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  What does your business or organisation do? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/does-your-business-or-organisation-do-any-of-the-following-activities"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-xl  govuk-!-margin-bottom-5">What does your business or organisation do?</h1>
+
+      <p class="govuk-hint">Choose all the sectors and areas that your business or organisation operates in.</p>
+
+      <form method="post" action="/get-ready-for-brexit/">
+
+      {{ govukCheckboxes({
+        idPrefix: "advanced-manufacturing-and-services",
+        name: "advanced-manufacturing-and-services",
+        fieldset: {
+          legend: {
+            text: "Advanced manufacturing and services",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Aerospace and space",
+            text: "Aerospace and space",
+            checked: checked("advanced-manufacturing-and-services", "Aerospace and space") == "checked"
+          },
+          {
+            value: "Automotive",
+            text: "Automotive",
+            checked: checked("advanced-manufacturing-and-services", "Automotive") == "checked"
+          },
+          {
+            value: "Electronics, parts and machinery",
+            text: "Electronics, parts and machinery",
+            checked: checked("advanced-manufacturing-and-services", "Electronics, parts and machinery") == "checked"
+          },
+          {
+            value: "Installation, servicing and repair",
+            text: "Installation, servicing and repair",
+            checked: checked("advanced-manufacturing-and-services", "Installation, servicing and repair") == "checked"
+          },
+          {
+            value: "Marine and marine transport",
+            text: "Marine and marine transport",
+            checked: checked("advanced-manufacturing-and-services", "Marine and marine transport") == "checked"
+          },
+          {
+            value: "Rail (manufacture)",
+            text: "Rail (manufacture)",
+            checked: checked("advanced-manufacturing-and-services", "Rail (manufacture)") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "agriculture-animals-fisheries-and-forestry",
+        name: "agriculture-animals-fisheries-and-forestry",
+        fieldset: {
+          legend: {
+            text: "Agriculture, animals, fisheries and forestry",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Agriculture and farmin",
+            text: "Agriculture and farming",
+            checked: checked("agriculture-animals-fisheries-and-forestry", "Agriculture and farmin") == "checked"
+          },
+          {
+            value: "Animals and animal products",
+            text: "Animals and animal products",
+            checked: checked("agriculture-animals-fisheries-and-forestry", "Animals and animal products") == "checked"
+          },
+          {
+            value: "Fisheries (including wholesale)",
+            text: "Fisheries (including wholesale)",
+            checked: checked("agriculture-animals-fisheries-and-forestry", "Fisheries (including wholesale)") == "checked"
+          },
+          {
+            value: "Plants and forestry",
+            text: "Plants and forestry",
+            checked: checked("agriculture-animals-fisheries-and-forestry", "Plants and forestry") == "checked"
+          },
+          {
+            value: "Veterinary",
+            text: "Veterinary",
+            checked: checked("agriculture-animals-fisheries-and-forestry", "Veterinary") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "business-and-personal-services",
+        name: "business-and-personal-services",
+        fieldset: {
+          legend: {
+            text: "Business and personal services",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Personal services",
+            text: "Personal services",
+            checked: checked("business-and-personal-services", "Personal services") == "checked"
+          },
+          {
+            value: "Professional, legal and business services",
+            text: "Professional, legal and business services",
+            checked: checked("business-and-personal-services", "Professional, legal and business services") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "charities-and-voluntary-organisation",
+        name: "charities-and-voluntary-organisation",
+        fieldset: {
+          legend: {
+            text: "Charities and voluntary organisation",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Charities",
+            text: "Charities",
+            checked: checked("charities-and-voluntary-organisation", "Charities") == "checked"
+          },
+          {
+            value: "Voluntary and community organisations",
+            text: "Voluntary and community organisations",
+            checked: checked("charities-and-voluntary-organisation", "Voluntary and community organisations") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "construction-and-environmental-services",
+        name: "construction-and-environmental-services",
+        fieldset: {
+          legend: {
+            text: "Construction and environmental services",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Construction",
+            text: "Construction",
+            checked: checked("construction-and-environmental-services", "Construction") == "checked"
+          },
+          {
+            value: "Environmental services",
+            text: "Environmental services",
+            checked: checked("construction-and-environmental-services", "Environmental services") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "defence",
+        name: "defence",
+        fieldset: {
+          legend: {
+            text: "Defence",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Defence",
+            text: "Defence",
+            checked: checked("defence", "Defence") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "energy",
+        name: "energy",
+        fieldset: {
+          legend: {
+            text: "Energy",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Electricity",
+            text: "Electricity",
+            checked: checked("energy", "Electricity") == "checked"
+          },
+          {
+            value: "Nuclear",
+            text: "Nuclear",
+            checked: checked("energy", "Nuclear") == "checked"
+          },
+          {
+            value: "Oil, gas and coal",
+            text: "Oil, gas and coal",
+            checked: checked("energy", "Oil, gas and coal") == "checked"
+          },
+          {
+            value: "Renewable energy",
+            text: "Renewable energy",
+            checked: checked("energy", "Renewable energy") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "entertainment",
+        name: "entertainment",
+        fieldset: {
+          legend: {
+            text: "Entertainment",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Media and broadcasting",
+            text: "Media and broadcasting",
+            checked: checked("entertainment", "Media and broadcasting") == "checked"
+          },
+          {
+            value: "Creative industries",
+            text: "Creative industries",
+            checked: checked("entertainment", "Creative industries") == "checked"
+          },
+          {
+            value: "Gambling",
+            text: "Gambling",
+            checked: checked("entertainment", "Gambling") == "checked"
+          },
+          {
+            value: "Sports and recreation",
+            text: "Sports and recreation",
+            checked: checked("entertainment", "Sports and recreation") == "checked"
+          },
+          {
+            value: "Arts, culture and heritage",
+            text: "Arts, culture and heritage",
+            checked: checked("entertainment", "Arts, culture and heritage") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "finance-insurance-and-real-estate",
+        name: "finance-insurance-and-real-estate",
+        fieldset: {
+          legend: {
+            text: "Finance, insurance and real estate",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Financial services",
+            text: "Financial services",
+            checked: checked("finance-insurance-and-real-estate", "Financial services") == "checked"
+          },
+          {
+            value: "Insurance",
+            text: "Insurance",
+            checked: checked("finance-insurance-and-real-estate", "Insurance") == "checked"
+          },
+          {
+            value: "Real estate",
+            text: "Real estate",
+            checked: checked("finance-insurance-and-real-estate", "Real estate") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "health-and-social-care",
+        name: "health-and-social-care",
+        fieldset: {
+          legend: {
+            text: "Health and social care",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Health and social care services",
+            text: "Health and social care services",
+            checked: checked("health-and-social-care", "Health and social care services") == "checked"
+          },
+          {
+            value: "Medical technology",
+            text: "Medical technology",
+            checked: checked("health-and-social-care", "Medical technology") == "checked"
+          },
+          {
+            value: "Pharmaceuticals and clinical trials",
+            text: "Pharmaceuticals and clinical trials",
+            checked: checked("health-and-social-care", "Pharmaceuticals and clinical trials") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "information-and-communications",
+        name: "information-and-communications",
+        fieldset: {
+          legend: {
+            text: "Information and communications",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Digital, technology and computer services",
+            text: "Digital, technology and computer services",
+            checked: checked("information-and-communications", "Digital, technology and computer services") == "checked"
+          },
+          {
+            value: "Telecoms and information services",
+            text: "Telecoms and information services",
+            checked: checked("information-and-communications", "Telecoms and information services") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "manufacturing-of-consumer-goods",
+        name: "manufacturing-of-consumer-goods",
+        fieldset: {
+          legend: {
+            text: "Manufacturing of consumer goods",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Manufacturing",
+            text: "Manufacturing",
+            checked: checked("manufacturing-of-consumer-goods", "Manufacturing") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "materials-and-mining",
+        name: "materials-and-mining",
+        fieldset: {
+          legend: {
+            text: "Materials and mining",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Chemicals",
+            text: "Chemicals",
+            checked: checked("materials-and-mining", "Chemicals") == "checked"
+          },
+          {
+            value: "Diamonds",
+            text: "Diamonds",
+            checked: checked("materials-and-mining", "Diamonds") == "checked"
+          },
+          {
+            value: "Metals manufacture",
+            text: "Metals manufacture",
+            checked: checked("materials-and-mining", "Metals manufacture") == "checked"
+          },
+          {
+            value: "Mining",
+            text: "Mining",
+            checked: checked("materials-and-mining", "Mining") == "checked"
+          },
+          {
+            value: "Non-metal materials manufacture",
+            text: "Non-metal materials manufacture",
+            checked: checked("materials-and-mining", "Non-metal materials manufacture") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "public-administration",
+        name: "public-administration",
+        fieldset: {
+          legend: {
+            text: "Public administration",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Justice including prisons",
+            text: "Justice including prisons",
+            checked: checked("public-administration", "Justice including prisons") == "checked"
+          },
+          {
+            value: "Public administration",
+            text: "Public administration",
+            checked: checked("public-administration", "Public administration") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "research-and-education",
+        name: "research-and-education",
+        fieldset: {
+          legend: {
+            text: "Research and education",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Education",
+            text: "Education",
+            checked: checked("research-and-education", "Education") == "checked"
+          },
+          {
+            value: "Research",
+            text: "Research",
+            checked: checked("research-and-education", "Research") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "retail-wholesale-and-consumer-goods",
+        name: "retail-wholesale-and-consumer-goods",
+        fieldset: {
+          legend: {
+            text: "Retail, wholesale and consumer goods",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Food, drink and tobacco",
+            text: "Food, drink and tobacco",
+            checked: checked("retail-wholesale-and-consumer-goods", "Food, drink and tobacco") == "checked"
+          },
+          {
+            value: "Motor trade",
+            text: "Motor trade",
+            checked: checked("retail-wholesale-and-consumer-goods", "Motor trade") == "checked"
+          },
+          {
+            value: "Retail and wholesale (excluding food, drink and motors)",
+            text: "Retail and wholesale (excluding food, drink and motors)",
+            checked: checked("retail-wholesale-and-consumer-goods", "Retail and wholesale (excluding food, drink and motors)") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "tourism-and-hospitality",
+        name: "tourism-and-hospitality",
+        fieldset: {
+          legend: {
+            text: "Tourism and hospitality",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Accommodation",
+            text: "Accommodation",
+            checked: checked("tourism-and-hospitality", "Accommodation") == "checked"
+          },
+          {
+            value: "Restaurants, bars and catering",
+            text: "Restaurants, bars and catering",
+            checked: checked("tourism-and-hospitality", "Restaurants, bars and catering") == "checked"
+          },
+          {
+            value: "Tourism",
+            text: "Tourism",
+            checked: checked("tourism-and-hospitality", "Tourism") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "transport-and-logistics",
+        name: "transport-and-logistics",
+        fieldset: {
+          legend: {
+            text: "Transport and logistics",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Air freight and air passenger services",
+            text: "Air freight and air passenger services",
+            checked: checked("transport-and-logistics", "Air freight and air passenger services") == "checked"
+          },
+          {
+            value: "Ports and airports",
+            text: "Ports and airports",
+            checked: checked("transport-and-logistics", "Ports and airports") == "checked"
+          },
+          {
+            value: "Postal and courier services",
+            text: "Postal and courier services",
+            checked: checked("transport-and-logistics", "Postal and courier services") == "checked"
+          },
+          {
+            value: "Rail (passengers and freight)",
+            text: "Rail (passengers and freight)",
+            checked: checked("transport-and-logistics", "Rail (passengers and freight)") == "checked"
+          },
+          {
+            value: "Road (passengers and freight)",
+            text: "Road (passengers and freight)",
+            checked: checked("transport-and-logistics", "Road (passengers and freight)") == "checked"
+          },
+          {
+            value: "Warehousing, services and pipelines",
+            text: "Warehousing, services and pipelines",
+            checked: checked("transport-and-logistics", "Warehousing, services and pipelines") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Next"
+      }) }}
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

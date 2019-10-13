@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Do you plan to do either of the following when travelling? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/where-do-you-plan-to-travel"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      {{ govukCheckboxes({
+        idPrefix: "do-you-plan-to-do-either-of-the-following-when-travelling",
+        name: "do-you-plan-to-do-either-of-the-following-when-travelling",
+        fieldset: {
+          legend: {
+            text: "Do you plan to do either of the following when travelling?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Select all that apply. If neither apply, select next."
+        },
+        items: [
+          {
+            value: "Drive",
+            text: "Drive",
+            checked: checked("do-you-plan-to-do-either-of-the-following-when-travelling", "Drive") == "checked"
+          },
+          {
+            value: "Take your pet",
+            text: "Take your pet",
+            checked: checked("do-you-plan-to-do-either-of-the-following-when-travelling", "Take your pet") == "checked"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Next"
+      }) }}
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

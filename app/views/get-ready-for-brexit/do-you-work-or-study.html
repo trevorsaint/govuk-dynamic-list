@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+  Do you work or study? - Get ready for Brexit: check what you need to do - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/get-ready-for-brexit/where-do-you-live"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Do you work or study?</h1>
+
+    <p class="govuk-hint">Select all that apply. If you do something else, select next.</p>
+
+    <form method="post">
+
+      {{ govukCheckboxes({
+        idPrefix: "work",
+        name: "work",
+        fieldset: {
+          legend: {
+            text: "Work",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Work in the UK",
+            text: "Work in the UK",
+            checked: checked("work", "Work in the UK") == "checked"
+          },
+          {
+            value: "Work in Ireland",
+            text: "Work in Ireland",
+            checked: checked("work", "Work in Ireland") == "checked"
+          },
+          {
+            value: "Work in another EU country",
+            text: "Work in another EU country, Iceland, Liechtenstein, Norway or Switzerland",
+            checked: checked("work", "Work in another EU country") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "study",
+        name: "study",
+        fieldset: {
+          legend: {
+            text: "Study",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Study in the UK",
+            text: "Study in the UK",
+            checked: checked("study", "Study in the UK") == "checked"
+          },
+          {
+            value: "Study in Ireland",
+            text: "Study in Ireland",
+            checked: checked("study", "Study in Ireland") == "checked"
+          },
+          {
+            value: "Study in another EU country",
+            text: "Study in another EU country, Iceland, Liechtenstein, Norway or Switzerland",
+            checked: checked("study", "Study in another EU country") == "checked"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Next"
+      }) }}
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}
