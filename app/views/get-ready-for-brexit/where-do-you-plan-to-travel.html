@@ -28,7 +28,7 @@
           <h1 class="govuk-fieldset__heading">Where do you plan to travel for other purposes, like tourism?</h1>
         </legend>
 
-        <p>If you’ll be abroad overnight on 31 October, select where you plan to be.</p>
+        <!-- Whatever the user selects for residency, dont show x on this question -->
 
         <span class="govuk-hint" id="where-do-you-plan-to-travel-hint">Select all that apply. If you do not plan to travel, select next.</span>
 
@@ -39,22 +39,22 @@
             {
               value: "To the UK",
               text: "To the UK",
-              checked: checked("where-do-you-plan-to-travel", "To the UK") == "checked"
+              checked: checked("where-do-you-plan-to-travel", "To the UK")
             },
             {
               value: "To Ireland",
               text: "To Ireland",
-              checked: checked("where-do-you-plan-to-travel", "To Ireland") == "checked"
+              checked: checked("where-do-you-plan-to-travel", "To Ireland")
             },
             {
               value: "To another EU country",
               text: "To another EU country, Iceland, Liechtenstein, Norway or Switzerland",
-              checked: checked("where-do-you-plan-to-travel", "To another EU country") == "checked"
+              checked: checked("where-do-you-plan-to-travel", "To another EU country")
             },
             {
               value: "To the rest of the world",
               text: "To the rest of the world",
-              checked: checked("where-do-you-plan-to-travel", "To the rest of the world") == "checked"
+              checked: checked("where-do-you-plan-to-travel", "To the rest of the world")
             }
           ]
         }) }}
