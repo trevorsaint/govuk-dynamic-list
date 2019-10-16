@@ -28,36 +28,43 @@
           <h1 class="govuk-fieldset__heading">Where do you plan to travel for other purposes, like tourism?</h1>
         </legend>
 
-        <!-- Whatever the user selects for residency, dont show x on this question -->
-
         <span class="govuk-hint" id="where-do-you-plan-to-travel-hint">Select all that apply. If you do not plan to travel, select next.</span>
 
-        {{ govukCheckboxes({
-          idPrefix: "where-do-you-plan-to-travel",
-          name: "where-do-you-plan-to-travel",
-          items: [
-            {
-              value: "To the UK",
-              text: "To the UK",
-              checked: checked("where-do-you-plan-to-travel", "To the UK")
-            },
-            {
-              value: "To Ireland",
-              text: "To Ireland",
-              checked: checked("where-do-you-plan-to-travel", "To Ireland")
-            },
-            {
-              value: "To another EU country",
-              text: "To another EU country, Iceland, Liechtenstein, Norway or Switzerland",
-              checked: checked("where-do-you-plan-to-travel", "To another EU country")
-            },
-            {
-              value: "To the rest of the world",
-              text: "To the rest of the world",
-              checked: checked("where-do-you-plan-to-travel", "To the rest of the world")
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+
+          <div class="govuk-checkboxes">
+
+            {% if data['where-do-you-live'] != 'UK' %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="where-do-you-plan-to-travel" name="where-do-you-plan-to-travel[]" type="checkbox" value="To the UK" {{ checked("where-do-you-plan-to-travel", "To the UK") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="where-do-you-plan-to-travel">To the UK</label>
+            </div>
+            {% endif %}
+
+            {% if data['where-do-you-live'] != 'Ireland' %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="where-do-you-plan-to-travel-2" name="where-do-you-plan-to-travel[]" type="checkbox" value="To Ireland" {{ checked("where-do-you-plan-to-travel", "To Ireland") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="where-do-you-plan-to-travel-2">To Ireland</label>
+            </div>
+            {% endif %}
+
+            {% if data['where-do-you-live'] != 'Another EU country' %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="where-do-you-plan-to-travel-3" name="where-do-you-plan-to-travel[]" type="checkbox" value="To another EU country" {{ checked("where-do-you-plan-to-travel", "To another EU country") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="where-do-you-plan-to-travel-3">To another EU country, Iceland, Liechtenstein, Norway or Switzerland</label>
+            </div>
+            {% endif %}
+
+            {% if data['where-do-you-live'] != 'Somewhere else' %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="where-do-you-plan-to-travel-4" name="where-do-you-plan-to-travel[]" type="checkbox" value="To the rest of the world" {{ checked("where-do-you-plan-to-travel", "To the rest of the world") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="where-do-you-plan-to-travel-4">To the rest of the world</label>
+            </div>
+            {% endif %}
+
+          </div>
+
+        </div>
 
       </fieldset>
 
@@ -70,5 +77,7 @@
   </div>
 
 </div>
+
+<!--p>{{data|dump|safe}}</p-->
 
 {% endblock %}
