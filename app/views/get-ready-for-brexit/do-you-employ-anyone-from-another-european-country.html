@@ -32,18 +32,18 @@
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          idPrefix: "do-you-own-or-help-to-run-a-business-or-organisation",
-          name: "do-you-own-or-help-to-run-a-business-or-organisation",
+          idPrefix: "do-you-employ-anyone-from-another-european-country",
+          name: "do-you-employ-anyone-from-another-european-country",
           items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("do-you-own-or-help-to-run-a-business-or-organisation", "Yes") == "checked"
+              checked: checked("do-you-employ-anyone-from-another-european-country", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("do-you-own-or-help-to-run-a-business-or-organisation", "No") == "checked"
+              checked: checked("do-you-employ-anyone-from-another-european-country", "No")
             }
           ]
         }) }}
