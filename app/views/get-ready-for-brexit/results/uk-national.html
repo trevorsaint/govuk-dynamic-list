@@ -153,12 +153,16 @@
 
 <!-- Mailinglist -->
 <section>
-  <h2 class="govuk-heading-m">What you need to do may change</h2>
-  <p>Subscribe to updates about changes that may affect you and get a link to your results.</p>
-  {{ govukButton({
-    text: "Subscribe",
-    href: "https://www.gov.uk/get-ready-brexit-check/email-signup?c%5B%5D=do-not-employ-eu-citizens&c%5B%5D=owns-operates-business-organisation"
-  }) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">What you need to do may change</h2>
+      <p>Subscribe to updates about changes that may affect you and get a link to your results.</p>
+      {{ govukButton({
+        text: "Subscribe",
+        href: "https://www.gov.uk/get-ready-brexit-check/email-signup?c%5B%5D=do-not-employ-eu-citizens&c%5B%5D=owns-operates-business-organisation"
+      }) }}
+    </div>
+  </div>
 </section>
 
 
