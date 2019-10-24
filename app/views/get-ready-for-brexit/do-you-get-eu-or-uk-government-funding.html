@@ -2,7 +2,7 @@
 
 
 {% block pageTitle %}
-  Do you get EU or UK government funding? - Get ready for Brexit: check what you need to do - GOV.UK
+  Do you get EU government funding? - Get ready for Brexit: check what you need to do - GOV.UK
 {% endblock %}
 
 
@@ -25,32 +25,10 @@
       <fieldset class="govuk-fieldset">
 
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">Do you get EU or UK government funding?</h1>
+          <h1 class="govuk-fieldset__heading">Do you get EU government funding?</h1>
         </legend>
 
         <p>EU funding includes the Creative Europe Fund or Horizon 2020 scheme.</p>
-
-        {% set yesGovernmentFunding %}
-          {{ govukCheckboxes({
-            idPrefix: "government-funding",
-            name: "government-funding",
-            hint: {
-              text: "Select all that apply."
-            },
-            items: [
-              {
-                value: "EU funding",
-                text: "EU funding",
-                checked: checked("government-funding", "EU funding")
-              },
-              {
-                value: "UK government funding",
-                text: "UK government funding",
-                checked: checked("government-funding", "UK government funding")
-              }
-            ]
-          }) }}
-        {% endset -%}
 
         {{ govukRadios({
           idPrefix: "do-you-get-eu-or-uk-government-funding",
@@ -59,9 +37,6 @@
             {
               value: "Yes",
               text: "Yes",
-              conditional: {
-                html: yesGovernmentFunding
-              },
               checked: checked("do-you-get-eu-or-uk-government-funding", "Yes")
             },
             {

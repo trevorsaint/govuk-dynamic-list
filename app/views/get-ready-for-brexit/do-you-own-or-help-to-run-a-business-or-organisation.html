@@ -2,7 +2,7 @@
 
 
 {% block pageTitle %}
-  Do you own or help to run a business or organisation? - Get ready for Brexit: check what you need to do - GOV.UK
+  Do you own or help to run a UK business or organisation? - Get ready for Brexit: check what you need to do - GOV.UK
 {% endblock %}
 
 
@@ -25,13 +25,12 @@
       <fieldset class="govuk-fieldset">
 
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">Do you own or help to run a business or organisation?</h1>
+          <h1 class="govuk-fieldset__heading">Do you own or help to run a UK business or organisation?</h1>
         </legend>
 
         <p>This includes sole traders (self-employed), limited companies, and small and medium enterprises.</p>
 
         {{ govukRadios({
-          classes: "govuk-radios--inline",
           idPrefix: "do-you-own-or-help-to-run-a-business-or-organisation",
           name: "do-you-own-or-help-to-run-a-business-or-organisation",
           items: [
@@ -49,6 +48,11 @@
         }) }}
 
       </fieldset>
+
+      {{ govukDetails({
+        summaryText: "Why am I being asked this question?",
+        html: "<p>After Brexit, rules for UK businesses and organisations will change.</p><p>We need to know if you own or help to run a UK business or organisation so we can show you what you need to do to prepare for Brexit.</p>"
+      }) }}
 
       {{ govukButton({
         text: "Next"

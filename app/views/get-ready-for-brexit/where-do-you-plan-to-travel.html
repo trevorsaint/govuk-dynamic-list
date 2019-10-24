@@ -2,7 +2,7 @@
 
 
 {% block pageTitle %}
-  Where do you plan to travel for other purposes, like tourism? - Get ready for Brexit: check what you need to do - GOV.UK
+  Where do you plan to travel for leisure and tourism? - Get ready for Brexit: check what you need to do - GOV.UK
 {% endblock %}
 
 
@@ -25,7 +25,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="where-do-you-plan-to-travel-hint">
 
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">Where do you plan to travel for other purposes, like tourism?</h1>
+          <h1 class="govuk-fieldset__heading">Where do you plan to travel for leisure and tourism?</h1>
         </legend>
 
         <span class="govuk-hint" id="where-do-you-plan-to-travel-hint">Select all that apply. If you do not plan to travel, select next.</span>
@@ -67,6 +67,11 @@
         </div>
 
       </fieldset>
+
+      {{ govukDetails({
+        summaryText: "Why am I being asked this question?",
+        html: "<p>After Brexit the rules for travelling abroad will change.</p><p>We need to know where you plan to go so we can show you what you need to do before you travel.</p>"
+      }) }}
 
       {{ govukButton({
         text: "Next"
